@@ -6,10 +6,16 @@
 
 <app-header-tab [title]="'Tab 4'"></app-header-tab>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tab4</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-item lines="none">
+    <ion-label>Adivina un número del 0 al 100</ion-label>
+    <ion-button (click) ="comprobar(numero.value)" fill="clear">COMPROBAR</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Número:</ion-label>
+    <ion-input type="number" inputmode="numeric" #numero ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{ mensaje }}</ion-label>
+  </ion-item>
 </ion-content>
