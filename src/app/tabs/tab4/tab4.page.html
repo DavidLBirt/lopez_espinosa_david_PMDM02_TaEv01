@@ -13,9 +13,15 @@
   </ion-item>
   <ion-item>
     <ion-label>Número:</ion-label>
-    <ion-input type="number" inputmode="numeric" #numero ></ion-input>
+    <ion-input type="number" inputmode="numeric" #numero placeholder="Introduzca un número"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>{{ mensaje }}</ion-label>
+    <ion-label style="color: blue;">Número de intentos: {{ intentos }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label [ngStyle]="{color: mensaje == 'Enhorabuena!! Has Acertado el número secreto.' ? 'green' : 'black'}">{{ mensaje }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button *ngIf="mostrarBoton" (click)="reiniciar()">¿Quieres volver a jugar?</ion-button>
   </ion-item>
 </ion-content>
